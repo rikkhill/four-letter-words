@@ -27,5 +27,5 @@ def vectorise(word):
 
 
 def devectorise(word):
-
+    # TODO devectorise
     return word
