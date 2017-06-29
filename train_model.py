@@ -67,3 +67,15 @@ autoencoder.fit(train, train,
                 batch_size=10,
                 shuffle=True,
                 validation_data=(test, test))
+
+
+words = ["crud", "ball", "woob", "grue", "xbhq", "lakg", "lcfw"]
+
+
+for w in words:
+    wordvec = np.asarray([text.vectorise(w)])
+    print(w)
+    print(autoencoder.evaluate(wordvec, wordvec, 1))
+
+
+
