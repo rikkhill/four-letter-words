@@ -26,6 +26,6 @@ def vectorise(word):
     return np.array(vector)
 
 
-def devectorise(word):
+def devectorise(vector):
     # TODO devectorise
-    return word
+    return vector
