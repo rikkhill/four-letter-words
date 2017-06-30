@@ -44,20 +44,12 @@ print(test.shape)
 input_word = Input(shape=(104, ))
 
 encoded = Dense(26, activation='relu')(input_word)
-encoded = Dense(12, activation='relu')(encoded)
-encoded = Dense(6, activation='relu')(encoded)
-decoded = Dense(12, activation='relu')(encoded)
-decoded = Dense(26, activation='relu')(decoded)
+encoded = Dense(3, activation='relu')(encoded)
+decoded = Dense(26, activation='relu')(encoded)
 decoded = Dense(104, activation='sigmoid')(decoded)
 
 
 autoencoder = Model(input_word, decoded)
-
-#encoder = Model(input_word, encoded)
-
-#encoded_input = Input(shape=(13, ))
-#decoder_layer = autoencoder.layers[-1]
-#decoder = Model(encoded_input, decoder_layer(encoded_input))
 
 autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
 
@@ -78,4 +70,4 @@ for w in words:
     print(autoencoder.evaluate(wordvec, wordvec, 1))
 
 
-autoencoder.save("./models/flw_auto.h5")
+autoencoder.save("./models/flw_auto_narrow.h5")

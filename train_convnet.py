@@ -1,5 +1,5 @@
-from keras.layers import Input, Dense
-from keras.models import Model
+from keras.layers import Dropout, Dense
+from keras.models import Sequential
 import numpy as np
 import random
 
