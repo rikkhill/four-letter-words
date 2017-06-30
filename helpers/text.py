@@ -26,6 +26,12 @@ def vectorise(word):
     return np.array(vector)
 
 
+def random_word(n=4):
+
+    alphabet = list("abcdefghijklmnopqestuvwxyz")
+
+    return "".join(np.random.choice(alphabet, size=n).tolist())
+
 def devectorise(vector):
     # TODO devectorise
     return vector
